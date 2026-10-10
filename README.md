@@ -106,22 +106,45 @@ homework/asya-matstat-week02
 git branch --show-current
 ```
 
-## Как открыть ноутбуки
+## Как открыть ноутбуки в VS Code
 
-Запустите JupyterLab из корня проекта:
+Установите [Visual Studio Code](https://code.visualstudio.com/) и два официальных расширения:
+
+- [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python);
+- [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter).
+
+Расширения можно установить через раздел **Extensions** в VS Code или командами в терминале:
 
 ```bash
-python -m jupyter lab
+code --install-extension ms-python.python
+code --install-extension ms-toolsai.jupyter
 ```
 
-В открывшемся окне выберите нужную папку и ноутбук:
+Откройте **всю корневую папку репозитория**, а не отдельный файл. Из папки `hw_asya` выполните:
+
+```bash
+code .
+```
+
+Если команда `code` недоступна, откройте VS Code вручную, выберите **File → Open Folder** и укажите папку `hw_asya`.
+
+В панели **Explorer** слева откройте нужный ноутбук:
 
 - `python/` — домашние задания по Python;
 - `matstat/week01_homework.ipynb` — домашняя работа по математической статистике.
 
+После открытия ноутбука нажмите **Select Kernel** в правом верхнем углу, затем выберите **Python Environments** и интерпретатор из папки `.venv`:
+
+- macOS/Linux: `.venv/bin/python`;
+- Windows: `.venv\Scripts\python.exe`.
+
+Если `.venv` не отображается, откройте палитру команд сочетанием `Cmd+Shift+P` на macOS или `Ctrl+Shift+P` на Windows/Linux, выполните **Python: Select Interpreter** и выберите интерпретатор вручную. После этого снова нажмите **Select Kernel** в ноутбуке.
+
+Для запуска одной ячейки нажмите кнопку ▶ слева от неё или используйте `Shift+Enter`. Для проверки всего ноутбука выберите **Restart** и затем **Run All** на панели ноутбука. Все ячейки должны выполниться сверху вниз без ошибок.
+
 Для ноутбука по математической статистике важно сохранить структуру папки `matstat/`: файл данных загружается по относительному пути `data/youtube_data_short.csv`.
 
-После окончания работы остановите JupyterLab сочетанием `Ctrl+C` в терминале и деактивируйте окружение:
+После окончания работы сохраните ноутбук сочетанием `Cmd+S` на macOS или `Ctrl+S` на Windows/Linux. Если виртуальное окружение было активировано в терминале вручную, деактивируйте его:
 
 ```bash
 deactivate
@@ -131,7 +154,7 @@ deactivate
 
 ### 1. Проверьте ноутбук
 
-Перед отправкой сохраните ноутбук и выполните в JupyterLab команду **Kernel → Restart Kernel and Run All Cells**. Все ячейки должны выполниться сверху вниз без ошибок.
+Перед отправкой сохраните ноутбук в VS Code, нажмите **Restart**, а затем **Run All** на панели ноутбука. Все ячейки должны выполниться сверху вниз без ошибок.
 
 Проверьте список изменённых файлов:
 
